@@ -52,6 +52,8 @@ function draw() {
     
     save ();
     
+    clear ();
+    
   }
 
 //  save ('glyph.svg');
