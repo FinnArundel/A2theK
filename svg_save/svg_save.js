@@ -3,12 +3,12 @@ let y_cords = [100, 100, 300, 300];
 
 function setup() {
   createCanvas(400, 400, SVG);
-  background (220);
+  //background (220);
   frameRate (10);
 }
 
 function draw() {
-  background(220);
+  //background(220);
   noFill ();
   stroke (0);
 
@@ -49,9 +49,9 @@ function draw() {
     curveVertex (new_x_cords[3], new_y_cords[3]);
 
     endShape ();
-
-    print (new_x_cords);
-    print (new_y_cords);
+    
+    save ();
+    
   }
 
 //  save ('glyph.svg');
