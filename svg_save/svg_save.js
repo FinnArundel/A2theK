@@ -9,11 +9,12 @@ function setup() {
 
 function draw() {
   //background(220);
+  fill (0);
   noFill ();
   stroke (0);
+  strokeWeight (1);
 
-  // fill (0);
-  // noStroke ();
+  
  
   let new_x_cords = shuffle (x_cords);
   let new_y_cords = shuffle (y_cords); // shuffles the array to create random set
