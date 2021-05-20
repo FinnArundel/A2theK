@@ -12,7 +12,7 @@ function draw() {
   fill (0);
   noFill ();
   stroke (0);
-  strokeWeight (1);
+  strokeWeight (5);
 
   
  
