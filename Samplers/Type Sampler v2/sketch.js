@@ -17,5 +17,5 @@ function setup() {
 
 
 function fontColor (){
-  nsewWord.style ('color: #F0F')
+  newWord.style ('color: #F0F')
 }
