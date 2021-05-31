@@ -37,8 +37,6 @@ function preload () {
 function setup() {
   createCanvas(windowWidth, windowHeight );
   textFont (aisemic);
-  
-  getAudioContext().suspend();
 
   index = round (random (0, 5)); // selects random colour from set 
   colour = colours [index];
