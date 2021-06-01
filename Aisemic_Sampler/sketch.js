@@ -1,3 +1,23 @@
+/* 
+Finn Arundel, 2021
+for A to the K studio, RMIT, lead by Andy Simionato and Karen ann Donnachie
+Completed with inspiration / help by Karen ann Donnachie, Tiger Dingsun, and Daniel Shiffman
+
+Typefaces used:
+Aisemic by Finn Arundel
+Champagne Socialist by Fergus Arundel
+
+Libraries used:
+p5.js
+rita.js
+Tone.js
+
+Text for Markov chain:
+The Communist Manifesto, by Karl Marx and Friedrich Engels
+Utilitarianism, by John Stuart Mill
+An Essay Concerning Humane Understanding, Volume 1, by John Locke
+*/
+
 let markov, data1, data2, data3;
 let words;
 let font;
@@ -6,6 +26,7 @@ let nodes = [];
 let index;
 let colours = ['#FF681E', '#8B6A03', '#5888D5', '#59331D', '#A07CA5', '#D80D0D']; // background colours
 let colour;
+let cnv;
 
 let margin;
 let linespace;
@@ -19,6 +40,10 @@ let retranslated = [];
 let outside = [];
 
 let currentframe;
+
+StartAudioContext(Tone.context).then(function(){
+	//started
+})
 
 const synth = new Tone.Synth().toMaster(); // creates new synths and sets volume
 synth.set({ volume: -25 });
@@ -35,7 +60,7 @@ function preload () {
 }
 
 function setup() {
-  let cnv = createCanvas(windowWidth, windowHeight );
+  cnv = createCanvas(windowWidth, windowHeight );
   textFont (aisemic);
 
   index = round (random (0, 5)); // selects random colour from set 
@@ -55,9 +80,8 @@ function setup() {
 
 function draw() {
   background(colour);
-  
+
   cnv.mouseMoved (userStartAudio);
-  cnv.mousePressed (userStartAudio);
   
   for (let i = 0; i < words.length; i++){
       nodes[i].show(); // displays text
@@ -65,7 +89,7 @@ function draw() {
 
   push ();
   fill ('#F2F2F2')
-  textFont (mono, 22);
+  textFont (mono, width/80);
   text ('finn arundel. 2021 \naisemic typeface', margin, height - width/28);
   textAlign (RIGHT);
   text ('hover & click to translate\npress enter to generate new text', width - margin, height - width/28)
@@ -84,8 +108,7 @@ class Nodepoint {
     let bounds = aisemic.textBounds (words[this.r], this.x, this.y); // function creates box around each word
 
     if (translated[this.r] === false){ // if word hasn't been translated yet (default is no) then run this
-      if (mouseX > bounds.x && mouseX < bounds.x+bounds.w && mouseY > bounds.y && mouseY< bounds.y + bounds.h){ // when mouse goes over specifc word
-          userStartAudio();
+      if (mouseX > bounds.x && mouseX < bounds.x+bounds.w && mouseY > bounds.y && mouseY< bounds.y + bounds.h){ // when mouse goes over specifc word, done with help from Karen ann Donnachie
           textFont (mono)
           text (words[this.r], this.x, this.y);
         
@@ -166,7 +189,7 @@ function reload (){
 
   for (let i = 0; i < words.length; i++){
     
-    if (wdt + textWidth(words[i]) <= width - (margin)){ // if it fits the page
+    if (wdt + textWidth(words[i]) <= width - (margin)){ // if it fits the page, done with help from Karen ann Donnachie
       nodes[i] = new Nodepoint (wdt, hgt, i); 
       wdt = wdt + textWidth(words[i]) + spacesize; // space between words
     } else { // when word doesn't fit, go down line and reset wdt
