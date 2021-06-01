@@ -36,7 +36,6 @@ let charsize;
 let played = [];
 let poloplayed = [];
 let translated = [];
-let retranslated = [];
 let outside = [];
 
 let currentframe;
