@@ -9,7 +9,7 @@ Champagne Socialist by Fergus Arundel
 
 Libraries used:
 p5.js
-rita.js
+RiTa.js
 Tone.js
 
 Text for Markov chain:
