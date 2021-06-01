@@ -57,6 +57,7 @@ function draw() {
   background(colour);
   
   cnv.mouseMoved (userStartAudio);
+  cnv.mousePressed (userStartAudio);
   
   for (let i = 0; i < words.length; i++){
       nodes[i].show(); // displays text
