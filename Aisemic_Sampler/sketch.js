@@ -35,7 +35,7 @@ function preload () {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight );
+  let cnv = createCanvas(windowWidth, windowHeight );
   textFont (aisemic);
 
   index = round (random (0, 5)); // selects random colour from set 
@@ -55,6 +55,8 @@ function setup() {
 
 function draw() {
   background(colour);
+  
+  cnv.mouseMoved (userStartAudio);
   
   for (let i = 0; i < words.length; i++){
       nodes[i].show(); // displays text
