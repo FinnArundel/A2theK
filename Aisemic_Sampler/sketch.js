@@ -209,7 +209,7 @@ function generate (){
   colour = colours[index];
   
   words = [];
-  words = markov.generateTokens(75); // creates markov chain of 75 words
+  words = markov.generateTokens(70); // creates markov chain of 70 words
 
   translated = []; // resets all arrays to empty before they are refiled
   outside = [];
