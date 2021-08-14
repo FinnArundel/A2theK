@@ -2,7 +2,7 @@ let x_cords = [100, 300, 100, 300];
 let y_cords = [100, 100, 300, 300];
 
 function setup() {
-  createCanvas(400, 400, SVG);
+  createCanvas(400, 400);
   //background (220);
   frameRate (10);
 }
