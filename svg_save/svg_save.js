@@ -51,7 +51,7 @@ function draw() {
 
     endShape ();
     
-    save ();
+    save ("glyph.jpg");
     
     clear ();
     
